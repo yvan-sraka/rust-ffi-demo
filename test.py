@@ -2,6 +2,6 @@
 
 from ctypes import cdll
 
-lib = cdll.LoadLibrary("target/debug/libdummy.dylib")
+lib = cdll.LoadLibrary("target/debug/libdummy.so")
 
 print(lib.dummy())

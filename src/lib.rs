@@ -1,11 +1,11 @@
 extern crate libc;
 
 #[link(name = "hello", kind = "static")]
-extern {
+extern "C" {
     fn say_hello_to_world() -> u32;
 }
 
 #[no_mangle]
 pub fn dummy() -> u32 {
-    return unsafe { say_hello_to_world() };
+    unsafe { say_hello_to_world() }
 }

@@ -1,3 +1,6 @@
+extern crate cc;
+
 fn main() {
-    println!("cargo:rustc-link-search=/Users/yvan/Rust/mylib/");
+    cc::Build::new().file("hello.c").compile("libhello.a");
+    println!("cargo:rustc-link-search=.");
 }
